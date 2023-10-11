@@ -1,1 +1,6 @@
-//Write a JavaScript program where the program takes a random integer between 1 and 10, and the user is then prompted to input a guess number. The program displays a message "Good Work" if the input matches the guess number otherwise "Not matched".  
+// Write a JavaScript program to check whether a given integer is within 20 of 100 or 400
+const isWithin20 = (x) => {
+    return (x >= 80 && x <= 120) || (x >= 380 && x <= 420);
+  };
+
+  console.log(isWithin20(220))
