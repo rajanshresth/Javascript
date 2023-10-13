@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      .button {
+        display: inline-block; /* Ensures that each button is on the same line */
+        border: 1px solid black; /* Add a border to each button */
+        height: 60px; /* Sets the height/width of each button */
+        width: 60px;
+        padding: 5px; /* Add padding for spacing */
+        margin: 5px; /* Add margin for spacing */
+        display: flex; /* Center children vertically and horizontally */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text within the button */
+      }
+      #green {
+        background-color: green;
+      }
+      #white {
+        background-color: white;
+      }
+      #blue {
+        background-color: blue;
+      }
+      #yellow {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Color Scheme Switcher</h1>
+    <div id="container">
+      <button class="button" id="green">Green</button>
+      <button class="button" id="white">White</button>
+      <button class="button" id="blue">Blue</button>
+      <button class="button" id="yellow">Yellow</button>
+    </div>
+    <h2>
+      Try clicking on one of the colors above
+      <button>to change the background color of this container</button>
+    </h2>
+  </body>
+  <script>
+    const buttons = document.querySelectorAll(".button");
+    console.log(buttons);
+    const body = document.querySelector("body");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        body.style.backgroundColor = button.id;
+      });
+    });
+  </script>
+</html>

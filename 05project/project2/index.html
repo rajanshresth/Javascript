@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BMI Calculator</h1>
+      <form action="">
+        <p=>
+          <label for="height">Height in CM:</label>
+          <input type="text" name="height" id="height"/>
+        </p>
+        <p>
+            <label for="weight">Weight in Kg:</label>
+            <input type="text" name="weight" id="weight"/>
+        </p>
+        <h2 id="result"></h2>
+        <button id="calculate">Calculate BMI<button>
+      </form>
+      <div id="weight-guide">
+        <h3>BMI weight Guide</h3>
+        <p>Underweight = less than 18.5</p>
+        <p>Normal weight = 18.5–24.9</p>
+        <p>Overweight = 25–29.9</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    
+    // console.log(result);
+    // console.log(form);
+    form.addEventListener('submit',function(e){
+        e.preventDefault();
+        const height = parseInt(document.querySelector("#height").value);
+        const weight = parseInt(document.querySelector("#weight").value);
+        const result = document.querySelector("#result");
+        if(height==='' || weight==='' || isNaN(height) || isNaN(weight)){
+            return alert("Please enter the values");
+           
+        } else {
+            const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+            // show the result
+            result.innerHTML = `<span>${bmi}</span>`;
+        }
+        
+
+    })
+  </script>
+</html>
